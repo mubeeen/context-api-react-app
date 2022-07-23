@@ -1,10 +1,25 @@
 import './App.css';
+import { Header } from './components/Header';
+import {Home} from './components/Home';
+import {Cart} from "./components/Cart";
+import { 
+  BrowserRouter as Router, 
+  Routes,
+  Link,
+  Route 
+} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Inside APP.js</h1>
-    </div>
+    <>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} exact/>
+          <Route path="/cart" element={<Cart />}/>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
