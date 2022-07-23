@@ -7,7 +7,7 @@ export const Header = () => {
         <>
             <span className="header">React Context API Tutorials</span>
             <ul className="nav">
-                <li className="prod">
+                <li>
                     <Link to="/">Home</Link>
                 </li>   
                 <li>
