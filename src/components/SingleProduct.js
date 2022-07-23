@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react"
+import { MyCart } from "../contexts/CartContext";
 
-export const SingleProduct = ({ prod, cart, setCart }) => {
+export const SingleProduct = ({ prod }) => {
+    const { cart, setCart } = useContext(MyCart);
     const { id, name, price, image } = prod;
     
     return (

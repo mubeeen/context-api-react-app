@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
+import { MyCart } from "../contexts/CartContext";
 import { SingleProduct } from "./SingleProduct";
 import './styles.css';
 
-export const Cart = ({cart, setCart}) => {
-
+export const Cart = () => {
+    const { cart, setCart } = useContext(MyCart);
     const [total, setTotal] = useState();
 
     useEffect(()=>{
@@ -18,7 +19,7 @@ export const Cart = ({cart, setCart}) => {
             <div className="productContainer"> 
                 {
                     cart.map((prod) => (
-                        <SingleProduct prod={prod} key={cart.id} cart={cart} setCart={setCart}/>
+                        <SingleProduct prod={prod} key={cart.id}/>
                     ))
                 }
             </div>
